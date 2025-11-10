@@ -1,12 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-  int choice = -1;
-  float a;
-  float b;
-  float c;
-
-  while (choice != 0) {
+  while (1) {
+    float a,b,c;
+    int choice;
     printf("Select an option:\n");
     printf("1. Add\n");
     printf("2. Sub\n");
@@ -42,8 +39,12 @@ int main(void) {
         printf("Enter two numbers to divide:\n");
         scanf("%f", &a);
         scanf("%f", &b);
-        c = a/b;
-        printf("The result is: %.2f\n", c);
+        if (b!=0) {
+          c=a/b;
+          printf("The result is: %.2f\n", c);
+        } else {
+          printf("Undefined, try another number\n");
+        }
         break;
       default:
         printf("wrong");
